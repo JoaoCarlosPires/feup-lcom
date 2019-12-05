@@ -77,9 +77,12 @@ int video_init(uint16_t mode) {
 int(vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
   char *v_ptr = video_mem;
   v_ptr += (y * hres + x) * ((bits_per_pixel + 7) / 8);
-
+  uint32_t aux = color;
   for (int i = 0; i < len; i++) {
-    vg_draw_pixel(x + i, y, &color);
+    for (int k = 0; k < ((bits_per_pixel + 7) / 8); k++) {
+    v_ptr[k] = (char ) aux;
+    aux >>= 8;
+  }
   }
   return 0;
 }
@@ -95,10 +98,10 @@ int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t height, uint16_t width, 
 
 int vg_draw_pixel(uint16_t j, uint16_t i, uint32_t *color) {
   uint32_t aux = *color;
-  uint16_t bytesUsed = (bits_per_pixel + 7) / 8;
-  char *pixel = video_mem + (i * hres + j) * bytesUsed;
+  char *pixel = video_mem;
+  pixel += (i * hres + j) * ((bits_per_pixel + 7) / 8);
   for (int k = 0; k < ((bits_per_pixel + 7) / 8); k++) {
-    pixel[k] = (char) aux;
+    pixel[k] = (char ) aux;
     aux >>= 8;
   }
   return 0;

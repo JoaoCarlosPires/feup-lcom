@@ -2,6 +2,16 @@
 
 #include "kbd.h"
 #include "vbe.h"
+#include "screens/screen_cannon.h"
+#include "screens/screen_exit.h"
+#include "screens/screen_gameIcon.h"
+#include "screens/screen_level.h"
+#include "screens/screen_play.h"
+#include "screens/screen_score.h"
+#include "screens/screen_time.h"
+#include "screens/screen_titulo.h"
+#include "screens/screen_mainMenu.h"
+#include "screens/screen_gameScreen.h"
 
 char *video_mem;
 uint8_t *v_ptr;
@@ -22,7 +32,7 @@ int draw_xpm(xpm_map_t xpm, uint16_t x, uint16_t y) {
   for (uint16_t i = 0; i < height; i++) {
     for (uint16_t j = 0; j < width; j++) {
       uint32_t *color;
-      color = (uint32_t *) sprite + ((i * width + j) * ((bits_per_pixel + 7) / 8));
+      color = (uint32_t *) (sprite + ((i * width + j) * ((bits_per_pixel + 7) / 8)));
       vg_draw_pixel(x + j, y + i, color);
     }
   }
@@ -40,10 +50,11 @@ int home_screen() {
   sys_irqsetpolicy(KBD_IRQ, IRQ_EXCLUSIVE | IRQ_REENABLE, &hook_id);
 
   // Draws home screen;
+  draw_xpm(screen_mainMenu, 0, 0);
 
-  while (scancode != 0x1f && scancode != 0x12) {
+  while (scancode != 0x12 && scancode != 0x19) {
 
-    // If the ESC key is released, the while loop ends
+    // If the E key or the P key is pressed, the while loop ends
 
     // Get a request message.
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -70,7 +81,7 @@ int home_screen() {
   // cancels the subscription of the KBC interrupt before terminating
   sys_irqrmpolicy(&hook_id);
 
-  if (scancode == 0x1f) { // scancode S (start)
+  if (scancode == 0x19) { // scancode P (play)
     return 1;
   }
 
@@ -91,10 +102,11 @@ int game_screen() {
   sys_irqsetpolicy(KBD_IRQ, IRQ_EXCLUSIVE | IRQ_REENABLE, &hook_id);
   
   // Draws game screen
+  draw_xpm(screen_gameScreen, 0, 0);
 
   while (scancode != 0x12) {
 
-    // If the ESC key is released, the while loop ends
+    // If the E key is pressed, the while loop ends
 
     // Get a request message.
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
