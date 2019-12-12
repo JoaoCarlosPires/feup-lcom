@@ -1,17 +1,41 @@
 #include <lcom/lcf.h>
+#include <vbe.h>
+#include <screen.h>
 
-#include "kbd.h"
-#include "vbe.h"
-#include "screens/screen_cannon.h"
-#include "screens/screen_exit.h"
-#include "screens/screen_gameIcon.h"
-#include "screens/screen_level.h"
-#include "screens/screen_play.h"
-#include "screens/screen_score.h"
-#include "screens/screen_time.h"
-#include "screens/screen_titulo.h"
-#include "screens/screen_mainMenu.h"
+// All the following header files are xpm
+#include "screens/Game_Over.h"
+#include "screens/Pos1.h"
+#include "screens/Pos2.h"
+#include "screens/Pos3.h"
+#include "screens/Pos4.h"
+#include "screens/Pos5.h"
+#include "screens/PosF.h"
+#include "screens/PosI.h"
+#include "screens/PosM.h"
+#include "screens/level_1.h"
+#include "screens/level_2.h"
+#include "screens/level_3.h"
+#include "screens/level_4.h"
+#include "screens/level_5.h"
+#include "screens/score_000.h"
+#include "screens/score_050.h"
+#include "screens/score_100.h"
+#include "screens/score_150.h"
+#include "screens/score_200.h"
+#include "screens/score_250.h"
 #include "screens/screen_gameScreen.h"
+#include "screens/screen_mainMenu.h"
+#include "screens/time_0.h"
+#include "screens/time_1.h"
+#include "screens/time_10.h"
+#include "screens/time_2.h"
+#include "screens/time_3.h"
+#include "screens/time_4.h"
+#include "screens/time_5.h"
+#include "screens/time_6.h"
+#include "screens/time_7.h"
+#include "screens/time_8.h"
+#include "screens/time_9.h"
 
 char *video_mem;
 uint8_t *v_ptr;
@@ -22,6 +46,10 @@ uint16_t hres;
 uint16_t vres;
 
 uint16_t bits_per_pixel;
+
+extern int hook_id_kbd;
+extern int irq_set_kbd;
+extern int irq_set_timer;
 
 int draw_xpm(xpm_map_t xpm, uint16_t x, uint16_t y) {
   enum xpm_image_type type = XPM_8_8_8;
@@ -40,14 +68,98 @@ int draw_xpm(xpm_map_t xpm, uint16_t x, uint16_t y) {
   return 0;
 }
 
+void draw_level(int l) {
+  switch (l) {
+    case 1:
+      draw_xpm(level_1, 97, 39);
+      break;
+    case 2:
+      draw_xpm(level_2, 97, 39);
+      break;
+    case 3:
+      draw_xpm(level_3, 97, 39);
+      break;
+    case 4:
+      draw_xpm(level_4, 97, 39);
+      break;
+    case 5:
+      draw_xpm(level_5, 97, 39);
+      break;
+    default:
+      break;
+  }
+}
+
+void draw_score(int s) {
+  switch (s) {
+    case 0:
+      draw_xpm(score_000, 660, 39);
+      break;
+    case 1:
+      draw_xpm(score_050, 660, 39);
+      break;
+    case 2:
+      draw_xpm(score_100, 660, 39);
+      break;
+    case 3:
+      draw_xpm(score_150, 660, 39);
+      break;
+    case 4:
+      draw_xpm(score_200, 660, 39);
+      break;
+    case 5:
+      draw_xpm(score_250, 660, 39);
+      break;
+    default:
+      break;
+  }
+}
+
+void draw_time(int t) {
+  switch (t) {
+    case 0:
+      draw_xpm(time_0, 350, 39);
+      break;
+    case 1:
+      draw_xpm(time_1, 350, 39);
+      break;
+    case 2:
+      draw_xpm(time_2, 350, 39);
+      break;
+    case 3:
+      draw_xpm(time_3, 350, 39);
+      break;
+    case 4:
+      draw_xpm(time_4, 350, 39);
+      break;
+    case 5:
+      draw_xpm(time_5, 350, 39);
+      break;
+    case 6:
+      draw_xpm(time_6, 350, 39);
+      break;
+    case 7:
+      draw_xpm(time_7, 350, 39);
+      break;
+    case 8:
+      draw_xpm(time_8, 350, 39);
+      break;
+    case 9:
+      draw_xpm(time_9, 350, 39);
+      break;
+    case 10:
+      draw_xpm(time_10, 350, 39);
+      break;
+    default:
+    break;
+  }
+}
+
 int home_screen() {
+
   int ipc_status;
-  int hook_id = 2;
-  int irq_set = BIT(hook_id);
   int r;
   message msg;
-
-  sys_irqsetpolicy(KBD_IRQ, IRQ_EXCLUSIVE | IRQ_REENABLE, &hook_id);
 
   // Draws home screen;
   draw_xpm(screen_mainMenu, 0, 0);
@@ -64,22 +176,18 @@ int home_screen() {
 
     if (is_ipc_notify(ipc_status)) { // received notification
       switch (_ENDPOINT_P(msg.m_source)) {
-        case HARDWARE:                             // hardware interrupt notification
-          if (msg.m_notify.interrupts & irq_set) { // subscribed interrupt
+        case HARDWARE:                                 // hardware interrupt notification
+          if (msg.m_notify.interrupts & irq_set_kbd) { // subscribed interrupt
             kbc_ih();
           }
           break;
-        default:
-          break; // no other notifications expected: do nothing
+        default: break; // no other notifications expected: do nothing
       }
     }
     else { // received a standard message, not a notification
            // no standard messages expected: do nothing
     }
   }
-
-  // cancels the subscription of the KBC interrupt before terminating
-  sys_irqrmpolicy(&hook_id);
 
   if (scancode == 0x19) { // scancode P (play)
     return 1;
@@ -91,20 +199,61 @@ int home_screen() {
   return 0;
 }
 
+int gameover_screen() {
+  draw_xpm(Game_Over, 100, 260);
+  tickdelay(300);
+  if (home_screen() == 1) { // if the key E (exit) is pressed
+    game_screen();
+  }
+  return 0;
+}
+
+void change_cannon(int c) {
+  switch (c) {
+    case 1:
+      draw_xpm(Pos1, 0, 559);
+      break;
+    case 2:
+      draw_xpm(Pos2, 0, 559);
+      break;
+    case 3:
+      draw_xpm(Pos3, 0, 559);
+      break;
+    case 4:
+      draw_xpm(Pos4, 0, 559);
+      break;
+    case 5:
+      draw_xpm(Pos5, 0, 559);
+      break;
+    default:
+      break;
+  }
+}
+
 int game_screen() {
 
   int ipc_status;
-  int hook_id = 2;
-  int irq_set = BIT(hook_id);
   int r;
   message msg;
 
-  sys_irqsetpolicy(KBD_IRQ, IRQ_EXCLUSIVE | IRQ_REENABLE, &hook_id);
+  extern int counter;
+
+
+  int t = 10;
+  int c = 1;
+  int l = 1;
+  int s = 0;
+
   
+
   // Draws game screen
   draw_xpm(screen_gameScreen, 0, 0);
+  draw_time(t);
+  change_cannon(c);
+  draw_level(l);
+  draw_score(s);
 
-  while (scancode != 0x12) {
+  while (scancode != 0x12 && t != -1) {
 
     // If the E key is pressed, the while loop ends
 
@@ -116,13 +265,26 @@ int game_screen() {
 
     if (is_ipc_notify(ipc_status)) { // received notification
       switch (_ENDPOINT_P(msg.m_source)) {
-        case HARDWARE:                             // hardware interrupt notification
-          if (msg.m_notify.interrupts & irq_set) { // subscribed interrupt
+        case HARDWARE:                                 // hardware interrupt notification
+          if (msg.m_notify.interrupts & irq_set_kbd) { // subscribed interrupt
             kbc_ih();
+            if (scancode == 0x1f && c != 5) { // if the w key is pressed
+              c++;
+            }
+            else if (scancode == 0x11 && c != 1) { // if the s key is pressed
+              c--;
+            }
+            change_cannon(c);
+          }
+          if (msg.m_notify.interrupts & irq_set_timer) { // subscribed interrupt
+            timer_int_handler();
+            if ((counter % 60) == 0) {
+              draw_time(t);
+              t--;
+            }
           }
           break;
-        default:
-          break; // no other notifications expected: do nothing
+        default: break; // no other notifications expected: do nothing
       }
     }
     else { // received a standard message, not a notification
@@ -130,12 +292,11 @@ int game_screen() {
     }
   }
 
-  // cancels the subscription of the KBC interrupt before terminating
-  sys_irqrmpolicy(&hook_id);
+  if (scancode != 0x12) { // condition to print the gameover only if it was due to time
+    gameover_screen();
+  }
 
-  return 0;
-}
 
-int gameover_screen() {
+
   return 0;
 }

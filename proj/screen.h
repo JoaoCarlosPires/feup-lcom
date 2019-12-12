@@ -1,3 +1,6 @@
+#ifndef SCREEN_H
+#define SCREEN_H
+
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -31,3 +34,19 @@ int game_screen();
  * @return Return 0 upon success and non-zero otherwise
  */
 int gameover_screen();
+
+/**
+ * @brief Draws the time of the game
+ *
+ * @param t variable to control time
+ */
+void draw_time(int t);
+
+/**
+ * @brief Draws the cannon of position c
+ *
+ * @param c variable to set the cannon position
+ */
+void change_cannon(int c);
+
+#endif

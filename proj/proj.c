@@ -8,9 +8,7 @@
 #include "kbd.h"
 #include "vbe.h"
 #include "screen.h"
-
-// All the following header files are xpm
-
+#include "timer.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -18,11 +16,11 @@ int main(int argc, char *argv[]) {
 
   // enables to log function invocations that are being "wrapped" by LCF
   // [comment this out if you don't want/need it]
-  lcf_trace_calls("/home/lcom/labs/proj/trace.txt");
+  //lcf_trace_calls("/home/lcom/labs/proj/trace.txt");
 
   // enables to save the output of printf function calls on a file
   // [comment this out if you don't want/need it]
-  lcf_log_output("/home/lcom/labs/proj/output.txt");
+  //lcf_log_output("/home/lcom/labs/proj/output.txt");
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
@@ -47,9 +45,27 @@ uint32_t BlueMaskSize;
 uint32_t BlueFieldPosition;
 uint32_t MemoryModel;
 
+int hook_id_kbd;
+int irq_set_kbd;
+extern int hook_id_timer;
+uint8_t bit_no;
+int irq_set_timer;
+
 int(proj_main_loop)(int argc, char *argv[]) {
 
+  /* Initialization of video mode and keyboard */
+
   video_init(0x115);
+
+  hook_id_kbd = 2;
+  irq_set_kbd = BIT(hook_id_kbd);
+
+  irq_set_timer = BIT(hook_id_timer);
+  
+  sys_irqsetpolicy(KBD_IRQ, IRQ_EXCLUSIVE | IRQ_REENABLE, &hook_id_kbd);
+  timer_subscribe_int(&bit_no);
+
+  /* Start of the game */
 
   int menu_select = home_screen();
 
@@ -57,12 +73,14 @@ int(proj_main_loop)(int argc, char *argv[]) {
     game_screen();
   }
   else {
-    // Returns to text mode
-    vg_exit();
-
+    vg_exit(); // Returns to text mode
     return 0;
   }
 
+  // cancels the subscription of the KBC interrupt before terminating
+  sys_irqrmpolicy(&hook_id_kbd);
+  timer_unsubscribe_int();
+  
   // Returns to text mode
   vg_exit();
 
