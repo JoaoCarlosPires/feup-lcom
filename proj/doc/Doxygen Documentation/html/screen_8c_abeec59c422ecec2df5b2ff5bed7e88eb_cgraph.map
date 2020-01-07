@@ -1,0 +1,4 @@
+<map id="draw_xpm_transparent" name="draw_xpm_transparent">
+<area shape="rect" id="node1" title="Draws in the position (x,y) the xpm passed as argument but only the non&#45;white pixels." alt="" coords="5,5,159,32"/>
+<area shape="rect" id="node2" href="$vbe_8c.html#a8462ea4e03f9f1a0d76201fb583114ba" title="Draws in the position (j,i) the pixel with color, except if the color is White." alt="" coords="207,5,381,32"/>
+</map>

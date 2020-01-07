@@ -1,0 +1,12 @@
+<map id="draw_xpm" name="draw_xpm">
+<area shape="rect" id="node1" title="Draws in the position (x,y) the xpm passed as argument." alt="" coords="725,174,807,200"/>
+<area shape="rect" id="node2" href="$screen_8c.html#a95d5204c2089ff02b28473a4a4a055c5" title=" " alt="" coords="593,47,674,74"/>
+<area shape="rect" id="node3" href="$screen_8h.html#a035be5b97c008facbf8c98884c5d88c7" title="Draws the game screen." alt="" coords="329,174,429,200"/>
+<area shape="rect" id="node4" href="$screen_8h.html#a0d2139fca3d3efaafa052138500c1a6e" title="Draws the home screen." alt="" coords="181,199,281,226"/>
+<area shape="rect" id="node5" href="$screen_8h.html#a3734d9daf501ea594021fc6c1bd9b3b5" title="Draws the game over screen." alt="" coords="8,148,131,175"/>
+<area shape="rect" id="node6" href="$screen_8h.html#a166618a357a750e0431d992aded52f37" title="Draws the instructions menu." alt="" coords="5,250,133,276"/>
+<area shape="rect" id="node8" href="$screen_8h.html#a8577167d93b219383049ecbb0c9bbb78" title="Draws the paused screen." alt="" coords="477,98,541,124"/>
+<area shape="rect" id="node9" href="$screen_8c.html#a3a3c940ecf96bf5cd252042592d15e7e" title=" " alt="" coords="589,148,677,175"/>
+<area shape="rect" id="node10" href="$screen_8h.html#a9ce4ee2be3b3ebbd628f12382c20f0fb" title="Draws the time of the game." alt="" coords="593,199,674,226"/>
+<area shape="rect" id="node7" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="15,199,124,226"/>
+</map>

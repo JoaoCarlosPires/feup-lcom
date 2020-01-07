@@ -1,0 +1,4 @@
+<map id="draw_xpm" name="draw_xpm">
+<area shape="rect" id="node1" title="Draws in the position (x,y) the xpm passed as argument." alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node2" href="$vbe_8c.html#aff752015ffd2489a193191f3bc9fb68a" title="Draws in the position (j,i) the pixel with color." alt="" coords="135,5,237,32"/>
+</map>

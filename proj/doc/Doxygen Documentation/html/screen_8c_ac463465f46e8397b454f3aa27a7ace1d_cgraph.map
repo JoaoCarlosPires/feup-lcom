@@ -1,0 +1,5 @@
+<map id="draw_target" name="draw_target">
+<area shape="rect" id="node1" title="Draws the target of level tg." alt="" coords="5,5,95,32"/>
+<area shape="rect" id="node2" href="$screen_8c.html#abeec59c422ecec2df5b2ff5bed7e88eb" title="Draws in the position (x,y) the xpm passed as argument but only the non&#45;white pixels." alt="" coords="143,5,296,32"/>
+<area shape="rect" id="node3" href="$vbe_8c.html#a8462ea4e03f9f1a0d76201fb583114ba" title="Draws in the position (j,i) the pixel with color, except if the color is White." alt="" coords="344,5,519,32"/>
+</map>

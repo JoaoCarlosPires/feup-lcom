@@ -1,0 +1,8 @@
+<map id="change_cannon" name="change_cannon">
+<area shape="rect" id="node1" title="Draws the cannon of position c." alt="" coords="5,56,119,83"/>
+<area shape="rect" id="node2" href="$screen_8c.html#ac463465f46e8397b454f3aa27a7ace1d" title="Draws the target of level tg." alt="" coords="183,5,273,32"/>
+<area shape="rect" id="node3" href="$screen_8c.html#abeec59c422ecec2df5b2ff5bed7e88eb" title="Draws in the position (x,y) the xpm passed as argument but only the non&#45;white pixels." alt="" coords="337,31,491,57"/>
+<area shape="rect" id="node5" href="$screen_8c.html#a469319f84da06d5963fa4607d001fb46" title="Draws in the position (x,y) the xpm passed as argument, without loading it (already loaded)" alt="" coords="167,107,289,133"/>
+<area shape="rect" id="node4" href="$vbe_8c.html#a8462ea4e03f9f1a0d76201fb583114ba" title="Draws in the position (j,i) the pixel with color, except if the color is White." alt="" coords="539,56,713,83"/>
+<area shape="rect" id="node6" href="$vbe_8c.html#aff752015ffd2489a193191f3bc9fb68a" title="Draws in the position (j,i) the pixel with color." alt="" coords="363,132,465,159"/>
+</map>

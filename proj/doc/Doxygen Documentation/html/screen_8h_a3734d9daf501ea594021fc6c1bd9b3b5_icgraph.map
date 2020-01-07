@@ -1,0 +1,7 @@
+<map id="gameover_screen" name="gameover_screen">
+<area shape="rect" id="node1" title="Draws the game over screen." alt="" coords="477,31,600,57"/>
+<area shape="rect" id="node2" href="$screen_8h.html#a035be5b97c008facbf8c98884c5d88c7" title="Draws the game screen." alt="" coords="329,5,429,32"/>
+<area shape="rect" id="node3" href="$screen_8h.html#a0d2139fca3d3efaafa052138500c1a6e" title="Draws the home screen." alt="" coords="181,5,281,32"/>
+<area shape="rect" id="node4" href="$screen_8h.html#a166618a357a750e0431d992aded52f37" title="Draws the instructions menu." alt="" coords="5,5,133,32"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="15,56,124,83"/>
+</map>

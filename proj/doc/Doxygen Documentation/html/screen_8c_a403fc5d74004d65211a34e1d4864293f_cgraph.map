@@ -1,0 +1,9 @@
+<map id="draw_man_3" name="draw_man_3">
+<area shape="rect" id="node1" title="Draws the man movement 3." alt="" coords="5,120,100,147"/>
+<area shape="rect" id="node2" href="$screen_8c.html#a08d8192346c3156935a67836c389c59e" title="Draws the cannon of position c." alt="" coords="148,81,261,108"/>
+<area shape="rect" id="node4" href="$screen_8c.html#abeec59c422ecec2df5b2ff5bed7e88eb" title="Draws in the position (x,y) the xpm passed as argument but only the non&#45;white pixels." alt="" coords="480,107,633,133"/>
+<area shape="rect" id="node3" href="$screen_8c.html#ac463465f46e8397b454f3aa27a7ace1d" title="Draws the target of level tg." alt="" coords="326,56,415,83"/>
+<area shape="rect" id="node6" href="$screen_8c.html#a469319f84da06d5963fa4607d001fb46" title="Draws in the position (x,y) the xpm passed as argument, without loading it (already loaded)" alt="" coords="309,5,432,32"/>
+<area shape="rect" id="node5" href="$vbe_8c.html#a8462ea4e03f9f1a0d76201fb583114ba" title="Draws in the position (j,i) the pixel with color, except if the color is White." alt="" coords="681,81,856,108"/>
+<area shape="rect" id="node7" href="$vbe_8c.html#aff752015ffd2489a193191f3bc9fb68a" title="Draws in the position (j,i) the pixel with color." alt="" coords="505,5,608,32"/>
+</map>

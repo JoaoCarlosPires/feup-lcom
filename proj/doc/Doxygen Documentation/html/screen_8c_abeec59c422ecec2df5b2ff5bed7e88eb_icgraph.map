@@ -1,0 +1,17 @@
+<map id="draw_xpm_transparent" name="draw_xpm_transparent">
+<area shape="rect" id="node1" title="Draws in the position (x,y) the xpm passed as argument but only the non&#45;white pixels." alt="" coords="1048,169,1201,196"/>
+<area shape="rect" id="node2" href="$screen_8h.html#a08d8192346c3156935a67836c389c59e" title="Draws the cannon of position c." alt="" coords="749,245,863,272"/>
+<area shape="rect" id="node3" href="$screen_8h.html#a631a4907b16925bec64873d692be7225" title="Draws the man movement 1." alt="" coords="607,296,701,323"/>
+<area shape="rect" id="node6" href="$screen_8h.html#a0d2139fca3d3efaafa052138500c1a6e" title="Draws the home screen." alt="" coords="181,220,281,247"/>
+<area shape="rect" id="node10" href="$screen_8h.html#abcab1be6d9735fa7995bc09a187bb52f" title="Draws the man movement 2." alt="" coords="607,43,701,69"/>
+<area shape="rect" id="node11" href="$screen_8h.html#a403fc5d74004d65211a34e1d4864293f" title="Draws the man movement 3." alt="" coords="607,93,701,120"/>
+<area shape="rect" id="node12" href="$screen_8h.html#a01bcaca12e974f1eca422886a06b8f8e" title="Draws the man movement 4." alt="" coords="607,144,701,171"/>
+<area shape="rect" id="node13" href="$screen_8h.html#aee99321431d7bb25cd11fe42b7975e8a" title="Draws the man movement 5." alt="" coords="607,195,701,221"/>
+<area shape="rect" id="node15" href="$screen_8h.html#ac463465f46e8397b454f3aa27a7ace1d" title="Draws the target of level tg." alt="" coords="911,347,1000,373"/>
+<area shape="rect" id="node5" href="$screen_8h.html#a035be5b97c008facbf8c98884c5d88c7" title="Draws the game screen." alt="" coords="329,245,429,272"/>
+<area shape="rect" id="node14" href="$screen_8h.html#a8577167d93b219383049ecbb0c9bbb78" title="Draws the paused screen." alt="" coords="622,397,686,424"/>
+<area shape="rect" id="node4" href="$screen_8h.html#ad095350943a54a2cdcffca69db1fe388" title="Draws the man movement in position c." alt="" coords="477,169,559,196"/>
+<area shape="rect" id="node7" href="$screen_8h.html#a3734d9daf501ea594021fc6c1bd9b3b5" title="Draws the game over screen." alt="" coords="8,271,131,297"/>
+<area shape="rect" id="node8" href="$screen_8h.html#a166618a357a750e0431d992aded52f37" title="Draws the instructions menu." alt="" coords="5,220,133,247"/>
+<area shape="rect" id="node9" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="15,169,124,196"/>
+</map>

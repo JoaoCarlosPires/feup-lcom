@@ -1,0 +1,33 @@
+<map id="gameover_screen" name="gameover_screen">
+<area shape="rect" id="node1" title="Draws the game over screen." alt="" coords="5,888,128,915"/>
+<area shape="rect" id="node2" href="$screen_8c.html#a87e704e058fee705dcaadd38077f0818" title="Draws in the position (x,y) the xpm passed as argument." alt="" coords="879,668,960,695"/>
+<area shape="rect" id="node4" href="$screen_8c.html#a0d2139fca3d3efaafa052138500c1a6e" title="Draws the home screen." alt="" coords="176,888,276,915"/>
+<area shape="rect" id="node3" href="$vbe_8c.html#aff752015ffd2489a193191f3bc9fb68a" title="Draws in the position (j,i) the pixel with color." alt="" coords="1220,947,1323,973"/>
+<area shape="rect" id="node5" href="$mouse_8c.html#a2e47982b10fd25f49478633f6dd6832c" title="Function to Disable Mouse Interruptions." alt="" coords="347,1141,473,1168"/>
+<area shape="rect" id="node6" href="$screen_8c.html#a469319f84da06d5963fa4607d001fb46" title="Draws in the position (x,y) the xpm passed as argument, without loading it (already loaded)" alt="" coords="1024,921,1147,948"/>
+<area shape="rect" id="node8" href="$screen_8c.html#abeec59c422ecec2df5b2ff5bed7e88eb" title="Draws in the position (x,y) the xpm passed as argument but only the non&#45;white pixels." alt="" coords="1195,208,1348,235"/>
+<area shape="rect" id="node9" href="$mouse_8c.html#a324cd8adcea5368c7c7a194c568bcaa7" title="Function to Enable Mouse Interruptions." alt="" coords="349,661,471,688"/>
+<area shape="rect" id="node10" href="$screen_8c.html#a035be5b97c008facbf8c98884c5d88c7" title="Draws the game screen." alt="" coords="360,521,460,548"/>
+<area shape="rect" id="node22" href="$kbd_8c.html#aea970a154161a35f6894898a092ed70a" title="Interrupt handler for keyboard." alt="" coords="737,719,797,745"/>
+<area shape="rect" id="node26" href="$screen_8c.html#a166618a357a750e0431d992aded52f37" title="Draws the instructions menu." alt="" coords="544,775,672,801"/>
+<area shape="rect" id="node27" href="$mouse_8c.html#a3aa3405ff1a82e05cb90c9d07ef77f16" title="Command Stream Function." alt="" coords="324,888,496,915"/>
+<area shape="rect" id="node28" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Mouse Interrupt Handler." alt="" coords="371,939,449,965"/>
+<area shape="rect" id="node29" href="$mouse_8c.html#ac8a5a8b9ef660d33eefa06aee44f409e" title="Function to Subscribe Mouse Interruptions." alt="" coords="348,989,472,1016"/>
+<area shape="rect" id="node30" href="$mouse_8c.html#a377dae8f306ab98d37e7237806373b59" title="Function to Unsubscribe Mouse Interruptions." alt="" coords="341,1091,479,1117"/>
+<area shape="rect" id="node31" href="$mouse_8c.html#a4ba755b8eb77485eacedb0a6f191f8ea" title="Sets the variables lb, x_mouse and y_mouse with the values of mouse&#39;s left buttom,..." alt="" coords="383,1192,437,1219"/>
+<area shape="rect" id="node7" href="$vbe_8c.html#a8462ea4e03f9f1a0d76201fb583114ba" title="Draws in the position (j,i) the pixel with color, except if the color is White." alt="" coords="1396,552,1571,579"/>
+<area shape="rect" id="node11" href="$screen_8c.html#a08d8192346c3156935a67836c389c59e" title="Draws the cannon of position c." alt="" coords="863,208,976,235"/>
+<area shape="rect" id="node12" href="$screen_8c.html#ac463465f46e8397b454f3aa27a7ace1d" title="Draws the target of level tg." alt="" coords="1041,335,1130,361"/>
+<area shape="rect" id="node13" href="$screen_8c.html#a95d5204c2089ff02b28473a4a4a055c5" title=" " alt="" coords="727,563,808,589"/>
+<area shape="rect" id="node14" href="$screen_8c.html#ad095350943a54a2cdcffca69db1fe388" title="Draws the man movement in position c." alt="" coords="567,132,649,159"/>
+<area shape="rect" id="node20" href="$screen_8c.html#a3a3c940ecf96bf5cd252042592d15e7e" title=" " alt="" coords="723,613,811,640"/>
+<area shape="rect" id="node21" href="$screen_8c.html#a9ce4ee2be3b3ebbd628f12382c20f0fb" title="Draws the time of the game." alt="" coords="727,411,808,437"/>
+<area shape="rect" id="node24" href="$screen_8c.html#a8577167d93b219383049ecbb0c9bbb78" title="Draws the paused screen." alt="" coords="576,420,640,447"/>
+<area shape="rect" id="node25" href="$group__timer.html#ga91a2072306c68353712a6b771287dc2c" title="Timer 0 interrupt handler." alt="" coords="547,623,669,649"/>
+<area shape="rect" id="node15" href="$screen_8c.html#a631a4907b16925bec64873d692be7225" title="Draws the man movement 1." alt="" coords="720,107,815,133"/>
+<area shape="rect" id="node16" href="$screen_8c.html#abcab1be6d9735fa7995bc09a187bb52f" title="Draws the man movement 2." alt="" coords="720,157,815,184"/>
+<area shape="rect" id="node17" href="$screen_8c.html#a403fc5d74004d65211a34e1d4864293f" title="Draws the man movement 3." alt="" coords="720,208,815,235"/>
+<area shape="rect" id="node18" href="$screen_8c.html#a01bcaca12e974f1eca422886a06b8f8e" title="Draws the man movement 4." alt="" coords="720,5,815,32"/>
+<area shape="rect" id="node19" href="$screen_8c.html#aee99321431d7bb25cd11fe42b7975e8a" title="Draws the man movement 5." alt="" coords="720,56,815,83"/>
+<area shape="rect" id="node23" href="$kbd_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Reads the value of port into variable value, using cast and sys_inb()" alt="" coords="874,719,965,745"/>
+</map>

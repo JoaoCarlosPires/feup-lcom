@@ -1,0 +1,5 @@
+<map id="draw_score" name="draw_score">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,93,32"/>
+<area shape="rect" id="node2" href="$screen_8c.html#a87e704e058fee705dcaadd38077f0818" title="Draws in the position (x,y) the xpm passed as argument." alt="" coords="141,5,223,32"/>
+<area shape="rect" id="node3" href="$vbe_8c.html#aff752015ffd2489a193191f3bc9fb68a" title="Draws in the position (j,i) the pixel with color." alt="" coords="271,5,373,32"/>
+</map>
