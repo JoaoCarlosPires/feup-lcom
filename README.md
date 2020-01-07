@@ -12,4 +12,4 @@ This programs were created during the **1st semester** of the **2nd year** of **
 
 ###### Project Description:
 
-Videogame of the iconic circus performance *Homem Bala* (Bullet Man).
+Videogame of the iconic circus performance *Homem Bala* (Bullet Man), using **C programming language**.
